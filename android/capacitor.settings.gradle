@@ -15,4 +15,4 @@ include ':capacitor-status-bar'
 project(':capacitor-status-bar').projectDir = new File('../node_modules/@capacitor/status-bar/android')
 
 include ':nfcreader'
-project(':nfcreader').projectDir = new File('../../nfcreader/android')
+project(':nfcreader').projectDir = new File('../../capacitor-nfc-reader/android')

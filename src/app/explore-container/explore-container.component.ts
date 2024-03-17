@@ -9,6 +9,12 @@ import { nfcreader } from 'nfcreader';
 export class ExploreContainerComponent {
 
   @Input() name?: string;
+  constructor() {
+    nfcreader.setNfcDataCallback((data: any) => {
+      console.log(data);
+    })
+  }
+
 
   async testpluginMethod(msg: string) {
     await nfcreader.ReadNFCTag({ msg: msg }).then((res: any) => {
@@ -19,6 +25,12 @@ export class ExploreContainerComponent {
   async writeNFC() {
     await nfcreader.WriteNFCTag(12345).then((res: any) => {
       alert(JSON.stringify(res.value));
+    })
+  }
+
+  async startNfcReading() {
+    await nfcreader.startNfcReading({}).then((result: any) => {
+      alert(JSON.stringify(result));
     })
   }
 }
