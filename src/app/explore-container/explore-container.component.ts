@@ -32,4 +32,16 @@ export class ExploreContainerComponent {
       alert(JSON.stringify(result));
     })
   }
+
+  async isActive() {
+    await nfcreader.checkNfcAvailability({ available: false }).then((res: any) => {
+      alert(JSON.stringify(res));
+    })
+  }
+
+  async read() {
+    await nfcreader.readNfcTag({ data: "" }).then((res: any) => {
+      alert(JSON.stringify(res));
+    })
+  }
 }
