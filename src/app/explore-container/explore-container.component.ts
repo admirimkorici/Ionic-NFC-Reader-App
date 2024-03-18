@@ -11,25 +11,24 @@ export class ExploreContainerComponent {
   @Input() name?: string;
   constructor() {
     nfcreader.setNfcDataCallback((data: any) => {
-      console.log(data);
+      alert(JSON.stringify(data));
     })
   }
 
-
-  async testpluginMethod(msg: string) {
-    await nfcreader.ReadNFCTag({ msg: msg }).then((res: any) => {
-      alert("Return Value is: " + JSON.stringify(res.value));
-    });
-  }
-
   async writeNFC() {
-    await nfcreader.WriteNFCTag(12345).then((res: any) => {
+    await nfcreader.writeNfcTag({ data: "Test Test Test" }).then((res: any) => {
       alert(JSON.stringify(res.value));
     })
   }
 
   async startNfcReading() {
     await nfcreader.startNfcReading({}).then((result: any) => {
+      alert(JSON.stringify(result));
+    })
+  }
+
+  async stopReading() {
+    await nfcreader.stopNfcReading({}).then((result: any) => {
       alert(JSON.stringify(result));
     })
   }

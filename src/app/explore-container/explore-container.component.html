@@ -2,7 +2,8 @@
   <strong>{{ name }}</strong>
   <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
 
-  <ion-button (click)="testpluginMethod('Test Message')">Default</ion-button>
+  <ion-button (click)="writeNFC()">Write NFC Tag</ion-button>
 
-  <ion-button (click)="startNfcReading()">Write NFC Tag</ion-button>
+  <ion-button (click)="startNfcReading()">Start Reading</ion-button>
+  <ion-button (click)="stopReading()">Stop Reading</ion-button>
 </div>
